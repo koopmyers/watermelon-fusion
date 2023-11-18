@@ -1,0 +1,152 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Game/Game.gd" type="Script" id=1]
+[ext_resource path="res://Game/UserInputsController.gd" type="Script" id=2]
+[ext_resource path="res://Game/Claw.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Game/Box/Box.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Game/Fruits/Fruit.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Game/HUD/ScoreLabel.gd" type="Script" id=6]
+[ext_resource path="res://Menu/Theme/Headline03.tres" type="Theme" id=7]
+[ext_resource path="res://SafeArea.gd" type="Script" id=8]
+[ext_resource path="res://Menu/Theme/MenuButton.tres" type="Theme" id=9]
+[ext_resource path="res://Game/HUD/MultiplicatorLabel.gd" type="Script" id=11]
+[ext_resource path="res://Menu/Theme/Headline01.tres" type="Theme" id=12]
+[ext_resource path="res://Menu/Theme/Headline02.tres" type="Theme" id=13]
+
+[node name="Game" type="Node2D"]
+script = ExtResource( 1 )
+FruitScene = ExtResource( 5 )
+
+[node name="MultiplicatorTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="PopTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Foreground" type="CanvasLayer" parent="."]
+
+[node name="SafeArea" type="Control" parent="Foreground"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 8 )
+
+[node name="MarginContainer" type="MarginContainer" parent="Foreground/SafeArea"]
+anchor_right = 1.0
+margin_bottom = 111.0
+custom_constants/margin_right = 80
+custom_constants/margin_top = 50
+custom_constants/margin_left = 40
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Foreground/SafeArea/MarginContainer"]
+margin_left = 40.0
+margin_top = 50.0
+margin_right = 640.0
+margin_bottom = 166.0
+mouse_filter = 2
+
+[node name="MenuButton" type="Button" parent="Foreground/SafeArea/MarginContainer/HBoxContainer"]
+margin_right = 116.0
+margin_bottom = 116.0
+rect_min_size = Vector2( 116, 116 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource( 9 )
+
+[node name="Space" type="Control" parent="Foreground/SafeArea/MarginContainer/HBoxContainer"]
+margin_left = 120.0
+margin_right = 346.0
+margin_bottom = 116.0
+mouse_filter = 2
+size_flags_horizontal = 3
+
+[node name="ScoreValue" type="Label" parent="Foreground/SafeArea/MarginContainer/HBoxContainer"]
+margin_left = 350.0
+margin_top = 2.0
+margin_right = 600.0
+margin_bottom = 113.0
+rect_min_size = Vector2( 250, 0 )
+theme = ExtResource( 12 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.196078, 0.196078, 0.254902, 1 )
+text = "541"
+align = 2
+valign = 1
+script = ExtResource( 6 )
+
+[node name="Pivot" type="Control" parent="Foreground/SafeArea/MarginContainer/HBoxContainer/ScoreValue"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -44.0
+margin_right = -44.0
+mouse_filter = 2
+
+[node name="ScoreLabel" type="Label" parent="Foreground/SafeArea/MarginContainer/HBoxContainer/ScoreValue/Pivot"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -44.5
+margin_top = -14.5
+margin_right = 42.5
+margin_bottom = 20.5
+rect_min_size = Vector2( 87, 35 )
+theme = ExtResource( 7 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "SCORE"
+align = 1
+uppercase = true
+
+[node name="MultiplicatorPivot" type="Control" parent="Foreground/SafeArea/MarginContainer/HBoxContainer/ScoreValue"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -10.0
+margin_top = -12.0
+margin_right = -10.0
+margin_bottom = -12.0
+rect_rotation = 10.0
+
+[node name="MultiplicatorValue" type="Label" parent="Foreground/SafeArea/MarginContainer/HBoxContainer/ScoreValue/MultiplicatorPivot"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -52.5
+margin_top = -35.0
+margin_right = 52.5
+margin_bottom = 35.0
+rect_min_size = Vector2( 105, 35 )
+theme = ExtResource( 13 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "x2"
+script = ExtResource( 11 )
+
+[node name="UserInputsController" type="Node2D" parent="."]
+script = ExtResource( 2 )
+
+[node name="Claw" parent="." instance=ExtResource( 3 )]
+position = Vector2( 0, -1080 )
+
+[node name="Box" parent="." instance=ExtResource( 4 )]
+
+[node name="Fruits" type="Node2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 0, -640 )
+current = true
+
+[connection signal="multiplicator_updated" from="." to="Foreground/SafeArea/MarginContainer/HBoxContainer/ScoreValue/MultiplicatorPivot/MultiplicatorValue" method="_on_Game_multiplicator_updated"]
+[connection signal="score_updated" from="." to="Foreground/SafeArea/MarginContainer/HBoxContainer/ScoreValue" method="_on_Game_score_updated"]
+[connection signal="timeout" from="MultiplicatorTimer" to="." method="_on_MultiplicatorTimer_timeout"]
+[connection signal="pressed" from="Foreground/SafeArea/MarginContainer/HBoxContainer/MenuButton" to="." method="_on_MenuButton_pressed"]
+[connection signal="fruit_dropped" from="UserInputsController" to="Claw" method="_on_UserInputsController_fruit_dropped"]
+[connection signal="fruit_moved" from="UserInputsController" to="Claw" method="_on_UserInputsController_fruit_moved"]
+[connection signal="armed" from="Claw" to="." method="_on_Claw_armed"]
+[connection signal="limit_reached" from="Box" to="." method="_on_Box_limit_reached"]

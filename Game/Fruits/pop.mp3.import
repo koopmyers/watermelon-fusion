@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/pop.mp3-99ae1472a9f272dcf239dc9998df4200.mp3str"
+
+[deps]
+
+source_file="res://Game/Fruits/pop.mp3"
+dest_files=[ "res://.import/pop.mp3-99ae1472a9f272dcf239dc9998df4200.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

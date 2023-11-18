@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/success.mp3-99abc939a0e312f956d9d86933423817.mp3str"
+
+[deps]
+
+source_file="res://Game/Fruits/success.mp3"
+dest_files=[ "res://.import/success.mp3-99abc939a0e312f956d9d86933423817.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

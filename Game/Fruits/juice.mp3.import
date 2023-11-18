@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/juice.mp3-7a6d11ad3c0a35c82fdd5c572cf809a8.mp3str"
+
+[deps]
+
+source_file="res://Game/Fruits/juice.mp3"
+dest_files=[ "res://.import/juice.mp3-7a6d11ad3c0a35c82fdd5c572cf809a8.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

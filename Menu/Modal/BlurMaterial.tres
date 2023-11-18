@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[ext_resource path="res://Menu/Modal/BlurShader.tres" type="Shader" id=1]
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/blur_amount = 2.5
+shader_param/mix_amount = 0.22
+shader_param/color_over = Color( 0.292969, 0.292969, 0.292969, 1 )

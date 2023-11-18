@@ -1,0 +1,64 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "RigidBody2D",
+"class": "Fruit",
+"language": "GDScript",
+"path": "res://Game/Fruits/Fruit.gd"
+}, {
+"base": "Container",
+"class": "Modal",
+"language": "GDScript",
+"path": "res://Menu/Modal/Modal.gd"
+} ]
+_global_script_class_icons={
+"Fruit": "",
+"Modal": ""
+}
+
+[application]
+
+config/name="Watermelon Merge"
+run/main_scene="res://App.tscn"
+boot_splash/bg_color=Color( 0, 0, 0, 1 )
+config/icon="res://Icon/AppIcon1024.png"
+
+[display]
+
+window/size/width=720
+window/size/height=1280
+window/size/always_on_top=true
+window/size/test_width=360
+window/size/test_height=640
+window/handheld/orientation="portrait"
+window/stretch/mode="2d"
+window/stretch/aspect="expand"
+
+[gui]
+
+common/drop_mouse_on_gui_input_disabled=true
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
+[locale]
+
+translations=PoolStringArray( "res://Menu/Translation/translation.en.translation", "res://Menu/Translation/translation.fr.translation" )
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+environment/default_clear_color=Color( 0.52549, 0.980392, 0.584314, 1 )
+environment/default_environment="res://default_env.tres"
