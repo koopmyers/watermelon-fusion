@@ -19,10 +19,10 @@ func _unhandled_input(event):
 	if event is InputEventScreenTouch:
 		
 		if event.is_pressed():
-			pass
-		
-		else:
 			emit_signal("fruit_dropped", event.position.x)
+		
+#		else:
+#			emit_signal("fruit_dropped", event.position.x)
 	
 	if event is InputEventScreenDrag:
 		
