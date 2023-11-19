@@ -10,9 +10,9 @@ signal next_fruit_updated(type)
 signal ended
 
 
-const TOP_SCREEN_MARIN := 200 #px
+const TOP_SCREEN_MARIN := 350 #px
 const BOTTOM_SCREEN_MARGIN := 50 #px
-const CLAW_BOX_MARING := 100
+const CLAW_BOX_MARING := 105
 
 
 const CLAW_FRUITS := [Fruit.Type.CHERRY, Fruit.Type.STRAWBERRY, Fruit.Type.GRAPES, Fruit.Type.LEMON, Fruit.Type.ORANGE]
@@ -55,7 +55,7 @@ func set_area(p_view_rect: Rect2, p_safe_rect: Rect2):
 	var margin_top := abs(p_view_rect.position.y - p_safe_rect.position.y)
 	var margin_bottom := abs(p_view_rect.size.y - p_safe_rect.size.y) - margin_top
 	
-	claw.position.y = -(p_safe_rect.size.y - TOP_SCREEN_MARIN + CLAW_BOX_MARING)
+	claw.position.y = -(p_safe_rect.size.y - TOP_SCREEN_MARIN + CLAW_BOX_MARING - margin_top)
 	
 	var box_area := p_safe_rect.size
 	box_area.y -= TOP_SCREEN_MARIN + margin_top
