@@ -26,7 +26,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Watermelon Merge"
+config/name="Watermelon Fusion"
 run/main_scene="res://App.tscn"
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://Icon/AppIcon1024.png"
