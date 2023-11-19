@@ -53,6 +53,11 @@ func save_best_score(p_best_score: int):
 
 
 
+func exit_app():
+	get_tree().quit()
+
+
+
 func _on_Game_menu_pressed():
 	menu.open_in_game()
 

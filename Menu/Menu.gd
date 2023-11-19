@@ -89,3 +89,7 @@ func _on_VolumeButton_toggled(button_pressed):
 
 func _on_InfoButton_pressed():
 	open_info()
+
+
+func _on_CloseButton_pressed():
+	get_tree().notification(MainLoop.NOTIFICATION_WM_QUIT_REQUEST)
