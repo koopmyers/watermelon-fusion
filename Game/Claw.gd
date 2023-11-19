@@ -104,6 +104,9 @@ func _on_UserInputsController_fruit_dropped(pos_x):
 	if not armed:
 		return
 	
+	if user_dropped:
+		return
+	
 	drop_position_x = pos_x
 	user_dropped = true
 

@@ -16,7 +16,7 @@ one_shot = true
 [node name="Tween" type="Tween" parent="."]
 
 [node name="Position2D" type="Position2D" parent="."]
-position = Vector2( 0, -185 )
+position = Vector2( 0, -200 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 3 )
