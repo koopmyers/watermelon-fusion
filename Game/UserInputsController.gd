@@ -29,5 +29,5 @@ func _unhandled_input(event):
 		emit_signal("fruit_moved", event.position.x)
 	
 	
-	if event.is_action_pressed("ui_accept"):
+	if OS.is_debug_build() and event.is_action_pressed("ui_accept"):
 		emit_signal("fruit_dropped", get_local_mouse_position().x)

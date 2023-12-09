@@ -116,12 +116,11 @@ func drop():
 	if not armed:
 		return
 	
-#	current_fruit.global_position.x = drop_position_x
-	current_fruit.fall(FRUIT_DROP_IMPULSE)
+	if is_instance_valid(current_fruit):
+		current_fruit.fall(FRUIT_DROP_IMPULSE)
+		current_fruit = null
 	
 	armed = false
-	current_fruit = null
-	
 	user_dropped = false
 	drop_position_x = 0
 	

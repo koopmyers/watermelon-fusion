@@ -71,6 +71,9 @@ func _on_Game_ended():
 
 
 func _on_GameMenu_replay_pressed():
+	if not is_instance_valid(game):
+		return
+	
 	game.reset()
 	game.start()
 	
