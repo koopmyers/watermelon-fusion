@@ -71,6 +71,10 @@ func open_info():
 
 
 func _on_Menu_closed():
+	if end_game.visible:
+		emit_signal("replay_pressed")
+	
+	
 	in_game.hide()
 	info.hide()
 	end_game.hide()
