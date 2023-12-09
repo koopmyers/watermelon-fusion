@@ -11,6 +11,8 @@ const SCORE_TR := "SCORE"
 var master_bus_index := AudioServer.get_bus_index("Master")
 
 onready var in_game := get_node("%InGame")
+onready var in_game_best_score_label := get_node("%InGameBestScoreValue")
+
 onready var info := get_node("%Info")
 onready var info_rich_text_label := get_node("%RichTextLabel")
 
@@ -26,6 +28,8 @@ onready var best_score_label: Label = get_node("%BestScoreValue")
 
 func _ready():
 	assert(in_game)
+	assert(in_game_best_score_label)
+	
 	assert(info)
 	assert(info_rich_text_label)
 	assert(end_game)
@@ -41,7 +45,8 @@ func _ready():
 	_on_Menu_closed()
 
 
-func open_in_game():
+func open_in_game(best_score: int = 0):
+	in_game_best_score_label.text = str(best_score)
 	in_game.show()
 	open()
 

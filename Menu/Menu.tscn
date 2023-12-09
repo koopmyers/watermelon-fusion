@@ -109,34 +109,78 @@ background_NodePath = NodePath("ModalTemplate/Background")
 
 [node name="ModalTemplate" parent="." instance=ExtResource( 1 )]
 
+[node name="PanelContainer" parent="ModalTemplate/SafeArea/CenterContainer" index="0"]
+margin_top = 203.0
+margin_bottom = 1077.0
+
+[node name="MarginContainer" parent="ModalTemplate/SafeArea/CenterContainer/PanelContainer" index="0"]
+margin_bottom = 806.0
+
 [node name="InGame" type="VBoxContainer" parent="ModalTemplate/SafeArea/CenterContainer/PanelContainer/MarginContainer" index="0"]
 unique_name_in_owner = true
-visible = false
 margin_right = 417.0
-margin_bottom = 624.0
+margin_bottom = 734.0
 theme = ExtResource( 3 )
 custom_constants/separation = 40
 alignment = 1
 
-[node name="Space" type="Control" parent="ModalTemplate/SafeArea/CenterContainer/PanelContainer/MarginContainer/InGame"]
+[node name="BestScore" type="HBoxContainer" parent="ModalTemplate/SafeArea/CenterContainer/PanelContainer/MarginContainer/InGame"]
 margin_right = 417.0
+margin_bottom = 70.0
+custom_constants/separation = 20
+alignment = 1
+
+[node name="BestScoreLabel" type="Label" parent="ModalTemplate/SafeArea/CenterContainer/PanelContainer/MarginContainer/InGame/BestScore"]
+margin_left = 42.0
+margin_top = 17.0
+margin_right = 212.0
+margin_bottom = 52.0
+rect_min_size = Vector2( 87, 35 )
+theme = ExtResource( 7 )
+text = "BEST_SCORE"
+align = 1
+uppercase = true
+
+[node name="DotsLabel" type="Label" parent="ModalTemplate/SafeArea/CenterContainer/PanelContainer/MarginContainer/InGame/BestScore"]
+margin_left = 232.0
+margin_top = 17.0
+margin_right = 240.0
+margin_bottom = 52.0
+theme = ExtResource( 7 )
+text = ":"
+
+[node name="InGameBestScoreValue" type="Label" parent="ModalTemplate/SafeArea/CenterContainer/PanelContainer/MarginContainer/InGame/BestScore"]
+unique_name_in_owner = true
+margin_left = 260.0
+margin_right = 374.0
+margin_bottom = 70.0
+rect_min_size = Vector2( 87, 35 )
+theme = ExtResource( 5 )
+text = "000"
+align = 1
+uppercase = true
+
+[node name="Space" type="Control" parent="ModalTemplate/SafeArea/CenterContainer/PanelContainer/MarginContainer/InGame"]
+margin_top = 110.0
+margin_right = 417.0
+margin_bottom = 110.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="ReplayButton" type="Button" parent="ModalTemplate/SafeArea/CenterContainer/PanelContainer/MarginContainer/InGame"]
 margin_left = 92.0
-margin_top = 40.0
+margin_top = 150.0
 margin_right = 324.0
-margin_bottom = 272.0
+margin_bottom = 382.0
 rect_min_size = Vector2( 232, 232 )
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource( 4 )
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="ModalTemplate/SafeArea/CenterContainer/PanelContainer/MarginContainer/InGame"]
-margin_top = 312.0
+margin_top = 422.0
 margin_right = 417.0
-margin_bottom = 428.0
+margin_bottom = 538.0
 custom_constants/separation = 40
 alignment = 1
 
@@ -160,16 +204,16 @@ size_flags_vertical = 4
 theme = ExtResource( 10 )
 
 [node name="Space2" type="Control" parent="ModalTemplate/SafeArea/CenterContainer/PanelContainer/MarginContainer/InGame"]
-margin_top = 468.0
+margin_top = 578.0
 margin_right = 417.0
-margin_bottom = 468.0
+margin_bottom = 578.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="ModalTemplate/SafeArea/CenterContainer/PanelContainer/MarginContainer/InGame"]
-margin_top = 508.0
+margin_top = 618.0
 margin_right = 417.0
-margin_bottom = 624.0
+margin_bottom = 734.0
 custom_constants/separation = 0
 alignment = 1
 
@@ -201,7 +245,7 @@ theme = ExtResource( 11 )
 unique_name_in_owner = true
 visible = false
 margin_right = 417.0
-margin_bottom = 610.0
+margin_bottom = 734.0
 theme = ExtResource( 3 )
 custom_constants/separation = 9
 alignment = 1
@@ -236,7 +280,7 @@ theme = ExtResource( 11 )
 unique_name_in_owner = true
 visible = false
 margin_right = 417.0
-margin_bottom = 610.0
+margin_bottom = 734.0
 theme = ExtResource( 3 )
 custom_constants/separation = 80
 alignment = 1

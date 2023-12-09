@@ -59,7 +59,7 @@ func exit_app():
 
 
 func _on_Game_menu_pressed():
-	menu.open_in_game()
+	menu.open_in_game(best_score)
 
 
 func _on_Game_ended():
